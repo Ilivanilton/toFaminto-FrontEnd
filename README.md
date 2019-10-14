@@ -1,4 +1,4 @@
-# TôFamito | Uma aplicação em Angular.
+# TôFamito | Uma aplicação em Angular ispirada no IFood.
 
 ## 1. Passos para começar
 
