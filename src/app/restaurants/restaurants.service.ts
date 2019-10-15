@@ -11,14 +11,18 @@ import { ErrorHandler } from "app/app.error-handler";
 @Injectable()
 export class RestaurantsService {
 
-    constructor(private http: Http){
-
-    }
+    constructor(private http: Http){}
 
     restaurants(): Observable<Restaurant[]>{
         return this.http.get(`${TF_API}/restaurants`)
-            .map(response => response.json())
-            .catch(ErrorHandler.HandlerError)
+        .map(response => response.json())
+        .catch(ErrorHandler.HandlerError)
+    }
+
+    restaurantById(id: string): Observable<Restaurant>{
+        return this.http.get(`${TF_API}/restaurants/${id}`)
+        .map(response => response.json())
+        .catch(ErrorHandler.HandlerError)
     }
 
 }
