@@ -20,4 +20,8 @@ menu: Observable<MenuItem[]>
     .menuOfRestaurant(this.actRoute.parent.snapshot.params['id'])
   }
 
+  addMenuItem(item: MenuItem){
+    console.log(item)
+  }
+
 }

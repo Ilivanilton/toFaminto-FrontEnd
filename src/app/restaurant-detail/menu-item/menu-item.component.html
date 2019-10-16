@@ -4,6 +4,6 @@
     <span class="menu-item-info-box-text">{{ item.name }}</span>
     <span class="menu-item-info-box-detail">{{ item.description }}</span>
     <span class="menu-item-info-box-price">{{ item.price | currency: 'BRL': true }}</span>
-    <a class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
+    <a (click)="emitAddEvent()" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
   </div>
 </div>

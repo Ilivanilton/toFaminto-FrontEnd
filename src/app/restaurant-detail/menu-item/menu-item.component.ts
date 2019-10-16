@@ -1,5 +1,5 @@
 import { MenuItem } from './menu-item.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'tf-menu-item',
@@ -8,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuItemComponent implements OnInit {
 
 @Input()  item: MenuItem
+@Output() add = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  emitAddEvent(){
+    this.add.emit(this.item)
   }
 
 }
