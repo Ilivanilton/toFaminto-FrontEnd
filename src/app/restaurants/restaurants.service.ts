@@ -25,4 +25,9 @@ export class RestaurantsService {
         .catch(ErrorHandler.HandlerError)
     }
 
+    reviewsOfRestaurant(id: string): Observable<any>{
+        return this.http.get(`${TF_API}/restaurant/${id}/reviews`)
+        .map(res => res.json())
+    }
+
 }
