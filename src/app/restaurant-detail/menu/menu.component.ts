@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
+import { RestaurantsService } from 'app/restaurants/restaurants.service';
+import { Component, OnInit, Output } from '@angular/core';
+import { MenuItem } from '../menu-item/menu-item.model';
 
 @Component({
   selector: 'tf-menu',
@@ -6,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+menu: Observable<MenuItem[]>
+
+  constructor(private restaurantsService:RestaurantsService,
+              private actRoute :ActivatedRoute) { }
 
   ngOnInit() {
+    this.menu = this.restaurantsService
+    .menuOfRestaurant(this.actRoute.parent.snapshot.params['id'])
   }
 
 }

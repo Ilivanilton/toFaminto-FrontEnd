@@ -1,6 +1,9 @@
 <!--INÍCIO DO MENU -->
 <div class="col-md-9 col-xs-12">
-  <!-- itens do menu aki -->
+  <tf-menu-item 
+    *ngFor="let item of menu | async"
+    [item]="item">
+  </tf-menu-item>
 </div>
 <div class="col-md-3 col-xs-12">
   <tf-shopping-cart></tf-shopping-cart>
