@@ -1,10 +1,11 @@
 import { MenuItem } from './../menu-item/menu-item.model';
 import { ItemCart } from './shopping-cart.model';
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class ShoppingCartService {
 
-    items: ItemCart[]
+    items: ItemCart[] = []
 
     addItem(item: MenuItem){
         let foundItem = this.items.find((mItem) => mItem.item.id === item.id)
@@ -25,7 +26,7 @@ export class ShoppingCartService {
 
     total(): number{
         return this.items
-            .map(item => item.valor())
+            .map(i => i.valor() )
             .reduce((prev,value) => prev+value, 0)
     }
     

@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -38,7 +39,10 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
     HttpModule,
     RouterModule.forRoot(ROUTE)
   ],
-  providers: [RestaurantsService],
+  providers: [
+    RestaurantsService,
+    ShoppingCartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
