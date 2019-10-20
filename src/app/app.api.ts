@@ -1,1 +1,1 @@
-export const TF_API = 'http://localhost:3000'
+export const TF_API = 'http://localhost:8000'
