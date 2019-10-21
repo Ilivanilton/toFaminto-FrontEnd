@@ -26,6 +26,7 @@ import { IndexComponent } from './crud/index/index.component';
 import { AddComponent } from './crud/add/add.component';
 import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './login/login.component';
+import { InputComponent } from './shared/input/input.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { LoginComponent } from './login/login.component';
     IndexComponent,
     AddComponent,
     UpdateComponent,
-    LoginComponent
+    LoginComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
