@@ -1,3 +1,9 @@
+import { LoginComponent } from './login/login.component';
+import { UpdateComponent } from './crud/update/update.component';
+import { AddComponent } from './crud/add/add.component';
+import { IndexComponent } from './crud/index/index.component';
+import { CrudComponent } from './crud/crud.component';
+import { OrderComponent } from './order/order.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { Routes } from "@angular/router";
@@ -17,6 +23,15 @@ export const ROUTE: Routes = [
             {path: 'menu', component: MenuComponent},
             {path: 'reviews', component: ReviewsComponent}
         ]},
+    {path: 'order', component: OrderComponent},
+    {path: 'admin', component: CrudComponent,
+    children: [
+        {path: '', redirectTo: 'index', pathMatch: 'full' },
+        {path: 'index', component: IndexComponent},
+        {path: 'add', component: AddComponent},
+        {path: 'update/:id', component: UpdateComponent}
+    ]},
+    {path: 'login', component: LoginComponent},
     {path: 'restaurantes', component: RestaurantsComponent},
     
 ]

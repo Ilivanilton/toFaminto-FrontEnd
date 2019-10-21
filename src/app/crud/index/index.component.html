@@ -1,0 +1,23 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+  </section>
+  
+  <section class="content">
+  
+    <h1> Restaurantes</h1>
+    <a [routerLink]="['/admin/add']" routerLinkActive="router-link-active" >+ add Restaurante</a>
+    <table class="table">
+      <td>ID</td>
+      <td>nome</td>
+      <td></td>
+      <td></td>
+      <tr *ngFor="let restaurant of restaurantes">
+        <td>{{ restaurant.id }}</td>
+        <td>{{ restaurant.name }}</td>
+        <td (click)="deleteRestaurante(restaurant.id)"><a>DELETE</a></td>
+        <td [routerLink]="['/admin/update',restaurant.id]" ><a>UPDATE</a></td>
+      </tr>
+
+    </table>
+  </section>
+  <!-- FIM DO CONTEÚDO -->

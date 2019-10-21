@@ -1,0 +1,142 @@
+
+
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+  </section>
+  
+  <section class="content">
+  
+    <a [routerLink]="['/admin']"> < back</a>
+    <h1> Add New Restaurante</h1>
+  <form #formData="ngForm" (ngSubmit)="addNewRestaurant(formData.value)">
+
+
+      <fieldset>
+          <input type="hidden" name="csrfmiddlewaretoken" value="hFf6ZiB6XAvmdQt13y4Nxge3eyzuMGdQSZDucR7n49fFsX243RJc6kL7y1rqgHHf">
+    
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    Slug
+    </label>
+    
+    
+    <div class="col-sm-10">
+    <input name="slug" class="form-control" type="text" value="" ngModel >
+    
+    </div>
+    </div>
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    Name
+    </label>
+    
+    <div class="col-sm-10">
+    <input name="name" class="form-control" type="text" value="" ngModel >
+    
+    
+    </div>
+    </div>
+    
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    Category
+    </label>
+    
+    
+    <div class="col-sm-10">
+    <input name="category" class="form-control" type="text" value="" ngModel >
+    
+    </div>
+    </div>
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    DeliveryEstimate
+    </label>
+    
+    <div class="col-sm-10">
+    <input name="deliveryEstimate" class="form-control" type="text" value="" ngModel >
+    
+    </div>
+    </div>
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    Rating
+    </label>
+    
+    <div class="col-sm-10">
+    <input name="rating" class="form-control" type="text" value="" ngModel >
+    
+    
+    </div>
+    </div>
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    ImagePath
+    </label>
+    
+    <div class="col-sm-10">
+    <input name="imagePath" class="form-control" type="text" value=""  ngModel  >
+    
+    </div>
+    </div>
+    
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    About
+    </label>
+    
+    
+    <div class="col-sm-10">
+    <textarea name="about" class="form-control" ngModel ></textarea>
+    
+    </div>
+    </div>
+    <div class="form-group ">
+    
+    <label class="col-sm-2 control-label ">
+    Hours
+    </label>
+    <div class="col-sm-10">
+    <textarea name="hours" class="form-control" ngModel ></textarea>
+    
+    </div>
+    </div>
+     <div class="form-actions">
+            <input type="submit" value="Add Restaurant"><br>
+      </div>
+        </fieldset>
+        {{ formData.value | json }}
+
+
+
+  </form>
+  <br>
+<h3 *ngIf="isAdded">{{ confirmationString }}</h3>
+
+
+
+
+
+<!--
+        <label >slug</label><input name="slug" type="text" ngModel><br>
+      <label >nome</label><input name="name" type="text" ngModel><br>
+      <input type="submit" value="Add Restaurant"><br>
+      {{ formData.value | json }}
+-->
+
+
+  </section>
+  <!-- FIM DO CONTEÚDO -->
