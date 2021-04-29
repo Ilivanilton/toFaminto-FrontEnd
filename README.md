@@ -16,7 +16,7 @@
 
 ### Dependência
 
-[toFaminto-BackEnd](https://github.com/Ilivanilton/toFaminto-backEnd-Django)
+[toFaminto-BackEnd](https://github.com/Ilivanilton/toFaminto-BackEnd)
 
 ## Créditos
 
