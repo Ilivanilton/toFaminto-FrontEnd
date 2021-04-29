@@ -4,7 +4,7 @@
 
 ### Clonando o Repositório
 
-`git clone git remote add origin https://github.com/Ilivanilton/toFaminto.git`
+`git clone https://github.com/Ilivanilton/toFaminto.git`
 
 ### Instalando as Dependências
 
@@ -13,6 +13,10 @@
 ### Inicializando o Servidor
 
 `ng server` ou `npm start`
+
+### Dependência
+
+[toFaminto-backEnd](https://github.com/Ilivanilton/toFaminto-backEnd-Django)
 
 ## Créditos
 
