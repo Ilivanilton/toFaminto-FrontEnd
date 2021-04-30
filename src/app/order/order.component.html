@@ -15,14 +15,14 @@
                   <i class="fa fa-shopping-cart"></i> Finalize o seu pedido
                 </h2>
               </div>
-            </div>                
+            </div>
 
             <div class="row invoice-info">
               <div class="col-xs-12">
                 <p class="lead">Endereço de Entrega:</p>
               </div>
               <div class="col-sm-6 col-xs-12">
-                
+
                 <tf-input-container
                   errorMessage="Campo Obrigatório"
                   label="Endereço"
@@ -30,15 +30,15 @@
                   <input name="address" minlength="5" required ngModel autocomplete="off" type="text" class="form-control" id="inputSuccess" placeholder="Endereço">
 
                 </tf-input-container>
-                
-                
+
+
               </div>
               <div class="col-sm-2 col-xs-6">
 
                 <tf-input-container
                   errorMessage="Campo Obrigatório"
                   label="Número"
-                >  
+                >
                   <input type="text" class="form-control" id="inputSuccess" placeholder="Número" name="number" required ngModel>
 
                 </tf-input-container>
@@ -116,27 +116,9 @@
                 <p class="lead">Formas de Pagamento:</p>
 
                   <div class="form-group">
-                      <div>
-                        <label>
-                          <div class="iradio_flat-red checked" aria-checked="false" aria-disabled="false"
-                              style="position: relative;">
-                              <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;"/>
-                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                          </div>
-                          Dinheiro
-                        </label>
-                      </div>
-                    <div>
-                      <label>
-                        <div class="iradio_flat-red" aria-checked="false" aria-disabled="false"
-                            style="position: relative;">
-                            <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;"/>
-                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                        </div>
-                        Cartão de Débito
-                      </label>
-                    </div>
-
+                    <tf-radio
+                      [options]="paymentOptions">
+                    </tf-radio>
                   </div>
 
               </div>
