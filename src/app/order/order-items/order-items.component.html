@@ -1,11 +1,11 @@
-<div *ngIf="!items"
+<div *ngIf="items.length === 0"
   class="col-xs-12" >
   <p>
     Não há itens no seu carrinho. Que tal começar por
     <a [routerLink]="['/restaurantes']">aqui</a>?
   </p>
 </div>
-<div *ngIf="items"
+<div *ngIf="items.length > 0"
   class="col-xs-12 table-responsive">
 
   <table class="table table-striped">
@@ -31,8 +31,8 @@
       </td>
       <td>{{item.item.name}}</td>
 
-      <td>{{item.item.description</td>
-      <td class="text-right">{{item.valor() | currency:'BRL':true</td>
+      <td>{{item.item.description}}</td>
+      <td class="text-right">{{item.valor() | currency:'BRL':true}}</td>
       <td class="text-right">
         <a
         (click)="emitRemove(item)"
