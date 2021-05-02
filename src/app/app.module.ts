@@ -28,6 +28,7 @@ import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './login/login.component';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { RadioComponent } from './shared/radio/radio.component';
     UpdateComponent,
     LoginComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,
