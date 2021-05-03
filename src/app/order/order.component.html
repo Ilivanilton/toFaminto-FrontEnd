@@ -5,7 +5,7 @@
   <section class="content">
     <section class="invoice">
 
-          <form #form="ngForm" novalidate>
+          <form [formGroup]="orderForm" novalidate>
             <div class="row">
               <div class="col-xs-12">
                 <h2 class="page-header">
@@ -14,7 +14,55 @@
               </div>
             </div>
 
-            <div class="row invoice-info">
+            <div class="row">
+              <div class="col-xs-12 col-sm-9">
+                <p class="lead">Seus Dados:</p>
+              </div>
+              <div class="col-xs-12 col-sm-3">
+                <span class="help-block pull-right has-error-block"
+                  *ngIf="orderForm.hasError('emailsNotMatch')">
+                  <i class="fa fa-remove"></i>
+                  E-mail's não conferem
+                </span>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <tf-input-container
+                  errorMessage="Campo Obrigatório e com 5 caracteres"
+                  label="Nome">
+                  <input
+                    formControlName="name"
+                    autocomplete="off" type="text"
+                    class="form-control" id="inputSuccess"
+                    placeholder="Nome">
+                </tf-input-container>
+              </div>
+
+              <div class="col-sm-2 col-xs-12">
+                <tf-input-container
+                  errorMessage="E-mail inválido"
+                  label="Email">
+                  <input
+                    formControlName="email"
+                    autocomplete="off" type="text"
+                    class="form-control" id="inputSuccess"
+                    placeholder="E-mail">
+                </tf-input-container>
+              </div>
+
+              <div class="col-sm-4 col-xs-12">
+                <tf-input-container
+                  errorMessage="E-mail inválido"
+                  label="Email">
+                  <input
+                    formControlName="emailConfirmation"
+                    autocomplete="off" type="text"
+                    class="form-control" id="inputSuccess"
+                    placeholder="Confirmação do e-mail">
+                </tf-input-container>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col-xs-12">
                 <p class="lead">Endereço de Entrega:</p>
               </div>
@@ -24,7 +72,7 @@
                   errorMessage="Campo Obrigatório"
                   label="Endereço"
                 >
-                  <input name="address" minlength="5" required ngModel autocomplete="off" type="text" class="form-control" id="inputSuccess" placeholder="Endereço">
+                  <input formControlName="address" autocomplete="off" type="text" class="form-control" id="inputSuccess" placeholder="Endereço">
 
                 </tf-input-container>
 
@@ -36,7 +84,7 @@
                   errorMessage="Campo Obrigatório"
                   label="Número"
                 >
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Número" name="number" required ngModel>
+                  <input type="text" class="form-control" id="inputSuccess" placeholder="Número" formControlName="number" >
 
                 </tf-input-container>
 
@@ -45,7 +93,7 @@
               <div class="col-sm-4 col-xs-6">
                 <div class="form-group">
                   <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Complemento</label>
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Complemento" name="optionalAddress" ngModel>
+                  <input type="text" class="form-control" id="inputSuccess" placeholder="Complemento" formControlName="optionalAddress" >
                 </div>
 
               </div>
@@ -76,7 +124,7 @@
                   <div class="form-group">
                     <tf-radio
                       [options]="paymentOptions"
-                      name="paymentOption" ngModel required>
+                      formControlName="paymentOption" >
                     </tf-radio>
                   </div>
 
@@ -98,8 +146,8 @@
           <div class="row">
             <div class="col-xs-12">
               <button
-                [disabled]="!form.valid || cartItems().length === 0"
-                (click)="checkOrder(form.value)"
+                [disabled]="!orderForm.valid || cartItems().length === 0"
+                (click)="checkOrder(orderForm.value)"
                 href="#"
                 class="btn btn-success pull-right">
                 <i class="fa fa-credit-card"></i> Concluir Pedido
