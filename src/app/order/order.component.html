@@ -79,7 +79,7 @@
                   <div class="form-group">
                     <tf-radio
                       [options]="paymentOptions"
-                      name="paymentOption" ngModel>
+                      name="paymentOption" ngModel required>
                     </tf-radio>
                   </div>
 
@@ -88,22 +88,10 @@
               <div class="col-sm-6 col-xs-12">
                 <p class="lead">Frete e Total:</p>
 
-                <div class="table-responsive">
-                  <table class="table">
-                    <tbody><tr>
-                      <th style="width:50%">Itens:</th>
-                      <td class="text-right">R$ 20,00</td>
-                    </tr>
-                    <tr>
-                      <th>Frete:</th>
-                      <td class="text-right">R$ 8,00</td>
-                    </tr>
-                    <tr>
-                      <th>Total:</th>
-                      <td class="text-right">R$ 28,00</td>
-                    </tr>
-                  </tbody></table>
-                </div>
+                <tf-delivery-cost
+                  [delivery]="delivery"
+                  [itemsValue]="itemsValue()">
+                </tf-delivery-cost>
               </div>
               <!-- /.col -->
             </div>
@@ -112,7 +100,7 @@
 
           <div class="row">
             <div class="col-xs-12">
-              <button [disabled]="!form.valid" href="#" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
+              <button [disabled]="!form.valid || cartItems().length === 0" href="#" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
               </button>
             </div>
           </div>
