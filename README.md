@@ -16,6 +16,9 @@
 
 ### Dependência
 
+json-server
+`npm install -g json-server` depois `json-server db.json`
+ou
 [toFaminto-BackEnd](https://github.com/Ilivanilton/toFaminto-BackEnd)
 
 ## Créditos

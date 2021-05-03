@@ -11,6 +11,7 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { RestaurantsComponent } from "./restaurants/restaurants.component";
 import { RestaurantDetailComponent } from "./restaurant-detail/restaurant-detail.component";
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 
@@ -24,6 +25,7 @@ export const ROUTE: Routes = [
             {path: 'reviews', component: ReviewsComponent}
         ]},
     {path: 'order', component: OrderComponent},
+    {path: 'order-summary', component: OrderSummaryComponent,},
     {path: 'admin', component: CrudComponent,
     children: [
         {path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -33,5 +35,5 @@ export const ROUTE: Routes = [
     ]},
     {path: 'login', component: LoginComponent},
     {path: 'restaurantes', component: RestaurantsComponent},
-    
+
 ]
