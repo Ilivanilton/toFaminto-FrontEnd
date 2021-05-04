@@ -2,7 +2,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 
@@ -52,7 +52,9 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     SharedModule.forRoot(),
     //CoreModule, obsoleto
-    RouterModule.forRoot(ROUTE)
+    RouterModule.forRoot(ROUTE,{
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   providers: [
     {
