@@ -24,7 +24,7 @@ import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './login/login.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
+//import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -50,8 +50,8 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    SharedModule,
-    CoreModule,
+    SharedModule.forRoot(),
+    //CoreModule, obsoleto
     RouterModule.forRoot(ROUTE)
   ],
   providers: [
