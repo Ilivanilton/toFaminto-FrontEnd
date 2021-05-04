@@ -8,7 +8,6 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
 import { RestaurantsComponent } from "./restaurants/restaurants.component";
 import { RestaurantDetailComponent } from "./restaurant-detail/restaurant-detail.component";
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
@@ -17,23 +16,30 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 export const ROUTE: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'sobre', component: AboutComponent},
     {path: 'restaurantes/:id', component: RestaurantDetailComponent,
-        children: [
-            {path: '', redirectTo: 'menu', pathMatch: 'full' },
-            {path: 'menu', component: MenuComponent},
-            {path: 'reviews', component: ReviewsComponent}
-        ]},
-    {path: 'order', component: OrderComponent},
+    children: [
+      {path: '', redirectTo: 'menu', pathMatch: 'full' },
+      {path: 'menu', component: MenuComponent},
+      {path: 'reviews', component: ReviewsComponent}
+    ]},
     {path: 'order-summary', component: OrderSummaryComponent,},
     {path: 'admin', component: CrudComponent,
     children: [
-        {path: '', redirectTo: 'index', pathMatch: 'full' },
-        {path: 'index', component: IndexComponent},
-        {path: 'add', component: AddComponent},
-        {path: 'update/:id', component: UpdateComponent}
+      {path: '', redirectTo: 'index', pathMatch: 'full' },
+      {path: 'index', component: IndexComponent},
+      {path: 'add', component: AddComponent},
+      {path: 'update/:id', component: UpdateComponent}
     ]},
     {path: 'login', component: LoginComponent},
     {path: 'restaurantes', component: RestaurantsComponent},
+    {
+      path: 'sobre',
+      loadChildren: './about/about.module#AboutModule'
+    },
+    {
+      path: 'order',
+      loadChildren: './order/order.module#OrderModule'
+    },
 
-]
+
+  ]
